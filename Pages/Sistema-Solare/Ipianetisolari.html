@@ -179,20 +179,5 @@ h1{
 </tbody>
 </table>
 </div>
-
-<script>
-const immagini = document.querySelectorAll("table img");
-
-immagini.forEach(                        // apro forEach
-  function(immagine_pianeta) {           // apro function del forEach
-    immagine_pianeta.addEventListener(   // apro addEventListener
-      "mouseover",                       // primo argomento
-      function() {                       // apro function dell'evento
-        alert(immagine_pianeta.alt);     // il codice da eseguire
-      }                                  // chiudo function dell'evento
-    );                                   // chiudo addEventListener
-  }                                      // chiudo function del forEach
-);                                       // chiudo forEach
-</script>
 </body>
 </html>
