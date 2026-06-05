@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title> IL MIO SITO WEB : 4H </title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+<style>
+html, body {
+   margin: 0;
+  background-color: #FFD9A3;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+}
+body img, table{
+  margin: 20px auto;
+}
+table{
+ border-collapse: collapse;
+ background-color: #FFF3E0;
+ border-radius: 12px;
+ overflow: hidden;
+ width: max-content;
+
+}
+
+table th{
+  background-color: #F2B705;
+  color: #4A2C00; 
+  padding: 15px; 
+  font-size: 1.2rem; 
+}
+table td,th{
+ padding: 12px;
+ border: 1px solid #4A2C00;
+}
+table tr:hover { 
+  background-color: #FFE8C7;
+}
+table img{
+  height: 200px;
+  width: auto;
+  cursor: pointer;
+}
+table img:active{
+  background-color:orange;
+}
+h1 {
+ font-size: 3rem; 
+ font-weight: 700; 
+ text-shadow: 2px 2px 6px rgba(0,0,0,0.15); /*Ombra del testo: spostata 2px a destra, 2px in basso, sfocatura di 6px, colore nero con 15% di opacità.*/
+ color: rgba(255,255,255,1);
+}
+.buttons{
+    position: absolute;     
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 12px;           
+}
+
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  background-color: #F2B705;
+  border: 2px solid #4A2C00;
+  border-radius: 12px;
+  text-decoration:none;
+}
+
+  .button:hover{
+    background-color:#F7C948;
+  }
+  .button i{
+  font-size: 32px;
+   color:#4A2C00
+}
+</style>
+
+ <script language= javascript>
+ function saluti(){
+   var nome= document.getElementById("txtNome").value;
+    alert("Benvenuto nel mio sito, "+nome)
+ }
+
+
+ </script>
+</head>
+<body>
+<h1> Il mio sito web  </h1>
+Come ti chiami? Inserisci il tuo nome. <INPUT type=text id=txtNome>
+<INPUT type=button id=btnSaluti value=Saluti onClick=saluti()>
+<div class=buttons>
+<a href="https://cdnjs.com/libraries/font-awesome/6.5.0" target="_blank" class=button title="Fonte del CDN per le icone Font-Awesome">
+<i class="fa-regular fa-file"></i>
+</a>
+<a href="https://fontawesome.com/" target="_blank" class=button title="Font Awesome Sito Ufficiale">
+<i class="fa-regular fa-cloud"></i>
+</a>
+</div>
+<table width=100%> 
+<thead>
+  <tr>
+    <th colspan="4"> Le mie attività </th>
+  </tr>
+</thead>
+  <tr>
+    <th> Sistema solare </th>
+    <th > Cantanti </th>
+    <th > Tabella </th>
+    <th> Picasso </th>
+
+  </tr>
+  <tr>
+    <td>  <a href="Pages/Sistema-Solare/Ipianetisolari.html" > <img src="Images/Index/Solar-system.png"> </a></td>
+    <td> <a href="Pages/Cantanti/Cantanti.html"> <img src= "Images/Index/Gatto-Cantante.png" > </a>  </td>
+    <td>  <a href= "Pages/Tabella/Tabella.html"> <img src="Images/Index/tabella.png" > </a></td>
+    <td> <a href="Pages/Picasso/PabloPicasso.html"> <img src="Images/Index/Pablo.png"> </a> </td>
+    </tr>
+    <tr>
+    <th>Curriculum </th>
+    <th>Gentileschi</th>
+    <th>Calcolatrice</th>
+    <th>Bottone</th>
+    </tr>
+    <tr>
+    <td> <a href="Pages/Curriculum/Curriculum_Sites/Curriculum.html"> <img src="Images/Index/Curriculum.png"> </a> </td>
+    <td> <a href="Pages/Gentileschi/Gentileschi_Sites/Artemisia.html"> <img src="Images/Index/Artemisia.png"> </a> </td>
+    <td> <a href=Pages/Calcolatrice/Calcolatrice.html> <img src=Images/Index/Calcolatrice.png> </a> </td>
+    <td> <a href=Pages/Bottone/Bottone_Sites/Bottone.html> <img src=Images/Index/Button.png> </a> </td>
+  </tr>
+  <tr>
+  <th> Pullover </th>
+  <th> Artisti in Progress </Th>
+  <th> Financial Times </th>
+  <th> Palestra </th>
+  </tr>
+  <tr>
+  <td> <a href= Pages/Pullover/Pullover.html> <img src=Images/Index/Pullover.png></a> </td>
+  <td> <a href=Pages/Artisti-in-Progress/Artisti-in-Progress_Sites/Artisti-in-Progress.html > <img src=Images/Index/Wassily-Kandinsky.png> </a> </td>
+  <td> <a href=Pages/Financial-Times/Financial-Times.html> <img src=Images/Index/financial-times.png> </a> </td>
+  <td> <a href=Pages/Palestra/Palestra.html> <img src=Images/Index/Palestra.png></a></td>
+  </tr>
+</table>
+</body>
+</html>

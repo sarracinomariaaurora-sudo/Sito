@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Il mio percorso in palestra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --bg2: #161616;
+      --accent: #c8a96e;
+      --accent2: #e8c98e;
+      --text: #e8e0d5;
+      --muted: #9a9080;
+      --border: #2a2520;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+       font-family: "Times New Roman", Times, serif;
+      font-weight: 300;
+      line-height: 1.9;
+      letter-spacing: 0.02em;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 60% 40%, #1e1810 0%, #0f0f0f 70%);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(200,169,110,0.03) 80px, rgba(200,169,110,0.03) 81px),
+        repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(200,169,110,0.03) 80px, rgba(200,169,110,0.03) 81px);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.2s;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 8vw, 6.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--text);
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.4s;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      margin-top: 28px;
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 480px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.6s;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 1s;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.1); }
+    }
+
+    /* LAYOUT */
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* SECTION */
+    section {
+      padding: 100px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-of-type { border-bottom: none; }
+
+    .section-number {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 40px;
+      color: var(--text);
+    }
+
+    h2 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    p {
+      color: #c8c0b5;
+      font-size: 1.05rem;
+      margin-bottom: 22px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* IMAGE PLACEHOLDER */
+    .img-placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--bg2);
+      border: 1px dashed var(--border);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 44px 0;
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .img-placeholder .icon {
+      width: 40px;
+      height: 40px;
+      opacity: 0.3;
+    }
+
+    .img-placeholder-sm {
+      aspect-ratio: 4/3;
+    }
+
+    /* TWO COL IMAGE */
+    .img-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 44px 0;
+    }
+
+    /* PULL QUOTE */
+    .pullquote {
+      border-left: 2px solid var(--accent);
+      padding: 24px 32px;
+      margin: 48px 0;
+      background: rgba(200,169,110,0.04);
+    }
+
+    .pullquote p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--accent2);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* TIMELINE DOT */
+    .phase-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .phase-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .phase-text {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 60px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+    }
+
+    footer span {
+      color: var(--accent);
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 600px) {
+      .img-grid { grid-template-columns: 1fr; }
+      .container { padding: 0 20px; }
+      section { padding: 70px 0; }
+    }
+    .foto {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin: 44px 0;
+  display: block;
+}
+.img-grid img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.contenitore {
+
+    display: inline-flex;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background-color: rgba(255,255,255,0.85);
+
+    padding: 12px 18px;
+
+    margin-top: 10px;
+
+    border-radius: 14px;
+
+    backdrop-filter: blur(6px);
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    z-index: 9999;
+    color:#B8860B;
+}
+
+.elemento {
+
+    text-align: center;
+}
+
+.elemento a {
+
+    text-decoration: none;
+
+      color:black;
+
+    transition: 0.3s;
+}
+
+.elemento a:hover {
+
+     color: #D4A017;
+}
+  </style>
+</head>
+<body>
+<div class= contenitore>
+<div class= elemento>
+<a href=../../index.html>| Home |</a> <a href=../Sistema-Solare/Ipianetisolari.html> | Sistema Solare | </a> <a href=../Cantanti/Cantanti.html>| Cantanti |</a> <a href=../Tabella/Tabella.html> | Tabella | </a> <strong>| Picasso | </strong> <a href=../Curriculum/Curriculum_Sites/Curriculum.html>| Curriculum |</a> <a href=../Gentileschi/Gentileschi_Sites/Artemisia.html>| Gentileschi |</a> <a href=../Calcolatrice/Calcolatrice.html> | Calcolatrice | </a> <a href=../Bottone/Bottone_Sites/Bottone.html>  |Bottone|</a> <a href=../Pullover/Pullover.html>
+|Pullover |</a> <a href=../Artisti-in-Progress/Artisti-in-Progress_Sites/Artisti-in-Progress.html> |Artisti in Progress| </a> <a href=../Financial-Times/Financial-Times.html> |Financial Times| <a href=../Financial-Times/Financial-Times.html/|Financial Times|></a> <strong>|Palestra|</strong>
+</div>
+</div>
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Il mio percorso<br/><em>in palestra</em></h1>
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      scorri
+    </div>
+  </div>
+
+  <!-- 1. INIZIO -->
+  <section>
+    <div class="container reveal">
+      <span class="section-number">01 — L'inizio</span>
+      <h2>Nascondersi, <em>poi osare</em></h2>
+
+      <div class="phase-label">
+        <div class="phase-dot"></div>
+        <span class="phase-text">Prima dell'estate 2022</span>
+      </div>
+
+      <p>Prima dell'estate del 2022 non avevo mai indossato un top che lasciasse la pancia scoperta per uscire. Sono sempre stata più alta delle mie coetanee, e questo mi faceva sentire in difetto. Avevo confuso la statura con la grossezza, e per questo mi nascondevo. Sentivo che il mio corpo non si era ancora sviluppato nel modo "giusto", che dovevo cambiare qualcosa.</p>
+
+      <div class="pullquote">
+        <p>Una volta dimagrita, allora andrò bene. Solo allora sarò giusta.</p>
+      </div>
+
+      <p>Fu con questo presupposto che iniziai ad andare in palestra insieme a una mia amica. La sua compagnia fu determinante all'inizio: da sola non avrei mai avuto il coraggio di entrare. Mi sentivo osservata e giudicata in ogni momento. Col tempo, però, capii che a giudicarmi era soltanto la mia mente. Nessun altro.</p>
+
+      <p>Ben presto la compagnia cominciò a starmi stretta. Io e la mia amica avevamo fisicità ed esigenze diverse, e mentalità opposte: io volevo allenarmi più spesso, lei non era predisposta. Nonostante questo, per un periodo non riuscii ad andare da sola, la paura del giudizio era ancora troppo forte. Poi feci quel passo. Ne combinai di figuracce, ma da ognuna imparai qualcosa, e a un certo punto l'imbarazzo lasciò spazio alle risate per la mia stessa goffaggine.</p>
+
+      <p>La palestra divenne un posto sicuro, e la amai fin da subito: quelle ore di allenamento mi svuotavano la testa e mi facevano stare bene.</p>
+     <div class="img-grid">
+        <img src="Palestra_Images/stacchi.jpeg">
+        <img src="Palestra_Images/hip_thrust.jpeg">
+     </div>
+  </section>
+
+  <!-- 2. DISCIPLINA -->
+  <section>
+    <div class="container reveal">
+      <span class="section-number">02 — La disciplina</span>
+      <h2>Risultati, <em>e il prezzo della perfezione</em></h2>
+
+      <div class="phase-label">
+        <div class="phase-dot"></div>
+        <span class="phase-text">Estate — secondo anno di superiori</span>
+      </div>
+
+      <p>Nell'estate dopo la fine del secondo anno di superiori la mia routine raggiunse la massima intensità. Andavo ad allenarmi ogni giorno, eccetto la domenica perché la palestra era chiusa. Cominciai anche a seguire un percorso con un nutrizionista, ed ero altrettanto disciplinata con l'alimentazione: non un grammo fuori posto. Quando uscivo, portavo il cibo da casa. Ero così concentrata sull'obiettivo che non sentivo nemmeno appetito se vedevo i miei amici mangiare del cibo spazzatura o dolci vari. Quelli me li concedevo nel fine settimana in mangiavo liberamente: due giorni non avrebbero compromesso i progressi.</p>
+
+      <p>I risultati arrivarono in fretta e furono visibili. Persi il grasso in eccesso e guadagnai massa magra. In quel periodo avevo gli addominali definiti anche con l'addome rilassato , una condizione che non ho più raggiunto da allora. Concluso il periodo di deficit, passai a una fase di surplus calorico, continuando a progredire.</p>
+
+      
+<img src=Palestra_Images/cibo.jpeg class=foto>
+      
+
+      <p>Eppure, nonostante i risultati oggettivi, le insicurezze non erano svanite. La mia mentalità del volere sempre di più è sempre stata un'arma a doppio taglio. Da una parte mi spingeva al miglioramento continuo con costanza. Dall'altra, era come se niente di ciò che facessi fosse mai abbastanza.</p>
+
+      <p>Anche se il mondo fosse crollato, non avrei mai permesso che la mia disciplina con la palestra, la dieta e la scuola ne risentisse. Nei momenti difficili, salvavo quelle cose prima ancora di me stessa, finendo spesso per dimenticarmi di essere una persona .</p>
+
+      <div class="pullquote">
+        <p>Fino al punto in cui ho confuso la disciplina con l'ossessione.</p>
+      </div>
+
+      <p>L'entusiasmo iniziale sparì insieme alla positività. Allo specchio riuscivo a vedere soltanto i difetti che non potevo correggere, cancellando tutto ciò che avevo migliorato. Il cibo era diventato solo una fonte di nutrienti: cucinavo pasta e carne insipide, senza sale, senza olio, senza nemmeno la verdura. I pensieri intrusivi cominciarono a prevalere sulla pace interiore che l'allenamento mi aveva sempre trasmesso. Ma non mi fermai. Rimasi costante lo stesso.</p>
+    </div>
+  </section>
+
+  <!-- 3. CROLLO -->
+  <section>
+    <div class="container reveal">
+      <span class="section-number">03 — Il crollo</span>
+      <h2>Quando il corpo <em>chiede di fermarsi</em></h2>
+
+      <div class="phase-label">
+        <div class="phase-dot"></div>
+        <span class="phase-text">Estate successiva — il ritorno dalle vacanze</span>
+      </div>
+
+      <p>Quando arrivò il periodo delle vacanze estive ero esausta. Proprio come l'estate prima aumentai i giorni d'allenamento, ma ormai non ero più una principiante e cominciai ad approcciarmi ad esercizi più pesanti e complessi. Seguii con diligenza la scheda, ma arrivata agli sgoccioli per la partenza, saltai l'ultimo allenamento della settimana , una cosa al tempo impensabile per me che non transigevo su niente. Al ritorno, la visita di controllo dal nutrizionista rivelò che ero dimagrita ulteriormente: lui rimase sorpreso, dicendomi che ero l'unica ad essere tornata dalle vacanze in quelle condizioni. Era passata poco più di una settimana, ma il mio corpo era a pezzi. La mente, però, non lo ascoltò: ripresi ad allenarmi con la stessa intensità di prima.</p>
+
+      <p>I segnali fisici erano chiari e inequivocabili. Ero così affaticata da non riuscire nemmeno a spostare un bilanciere senza dovermi sedere. Sapevo che non ce la facevo, ma continuavo a presentarmi ogni giorno, perchè la mia rigidità non mi permetteva di mettere a rischio i progressi che avevo ottenuto con fatica. A peggiorare la situazione fu la decisione di autogestirmi: smisi di andare dal nutrizionista e interruppi anche l'assunzione degli integratori che prendevo. L'errore fu che lo feci troppo bruscamente. Pretendevo che il mio corpo performasse come prima delle vacanze senza dargli il tempo nè i mezzi per recuperare. Non ero disposta a fare un passo indietro.</p>
+
+      <img src=Palestra_Images/holter.jpeg class="foto">
+      <p>Fu in quel periodo che cominciai ad avvertire delle <strong> extrasistoli </strong>. Ricordo la prima volta con precisione: stavo facendo degli affondi bulgari con il bilanciere, un esercizio che per me è sempre stato particolarmente impegnativo e stressante. Finita la serie, il cuore batteva forte , com'è normale dopo uno sforzo , ma a un certo punto sembrò interrompersi per un attimo, per poi ripartire. Una serie di battiti forti seguiti da uno debole. Mi spaventai moltissimo e tornai a casa, dove il fenomeno continuò.</p>
+
+      <p>Andai subito dal cardiologo. La visita e la prova da sforzo non mostrarono nulla di preoccupante. Il medico mi disse che se fosse ricapitato avrei potuto fare un holter. Quella stessa sera, però, tornai in palestra. Per combattere la stanchezza avevo preso un energy drink. Feci lo stesso identico esercizio e le extrasistoli si ripresentarono. Provai a continuare con esercizi più leggeri, ma alla fine me ne andai.</p>
+
+      <p>Insistetti per fare l'holter, perché la situazione mi spaventava. Ero così suggestionata da immaginarmi dolori che non esistevano. Anche l'holter non rilevò nulla. Il medico mi disse solo di stare calma. Con fatica, riuscii a smettere di pensarci, e da allora non ho più avvertito niente di strano.</p>
+    </div>
+  </section>
+
+  <!-- 4. RICADUTA -->
+  <section>
+    <div class="container reveal">
+      <span class="section-number">04 — La ricaduta</span>
+      <h2>Mollare, <em>per la prima volta</em></h2>
+
+      <p>Riprendere fu lento e difficile. Tornavo in palestra, facevo due esercizi e dovevo andarmene perché mi sentivo male. Il solo guardare una scheda di allenamento della portata di quelle che facevo prima mi provocava nausea. A dire il vero, in quel periodo ero spesso disturbata di stomaco e avvertivo un malessere fisico generale. Per questo decisi di tornare dal nutrizionista, convinta che se avessi ripreso ad assumere gli integratori e seguire una dieta specifica, allora mi sarei rimessa in forze. Inizialmente andò bene, proprio come prima. Poi arrivò un'altra ricaduta, in cui non riuscivo a seguire più nulla.</p>
+
+      <div class="pullquote">
+        <p>Per la prima volta in vita mia, ho davvero mollato. Ho accettato di non avere la forza per continuare.</p>
+      </div>
+
+      <p>Non è stato semplice: era il primo pensiero al mattino e l'ultimo alla sera. A ogni risveglio mi promettevo che quello sarebbe stato l'ultimo giorno così. Ho cominciato a procrastinare. Proprio io, che l'avevo sempre disprezzato. Inoltre, la mia mente si stava ammorbidendo e questo mi faceva sentire volubile e pigra. Mi ritrovavo a confrontarmi con la me del passato, convinta che lei sarebbe stata più ferma nelle sue decisioni e nei suoi doveri.</p>
+
+      <p>È doloroso accettare di essere cambiati, soprattutto quando ci si rende conto solo dopo di quanto si valeva .</p>
+
+      <p>Anche se rimpiango quella versione di me, non la idealizzo. Trasformavo ogni cosa , anche i miei hobby , in prove da superare per riaffermare il mio valore come persona. Magari ero ancora più efficiente , ma mai soddisfatta.</p>
+
+  </section>
+
+  <!-- 5. CRESCITA -->
+  <section>
+    <div class="container reveal">
+      <span class="section-number">05 — La crescita</span>
+      <h2>Quello che la palestra <em>mi ha davvero dato</em></h2>
+
+      <p>Spesso dico che voglio tornare come ero prima, ma la verità è che la me di allora e quella di oggi non sono due persone separate. Sono sempre la stessa persona che sta crescendo.</p>
+
+      <p>La palestra mi ha accompagnata in questa crescita in modi che non avrei immaginato. Sono sempre stata timida e riservata, ma in quell'ambiente ho imparato ad avere a che fare con gli altri, a guardarli negli occhi e a sostenerne lo sguardo. Ho superato quel disagio che mi spingeva a sentirmi sempre giudicata, quello stesso disagio che un tempo non mi avrebbe mai permesso di uscire da sola. Oggi invece sono completamente a mio agio. Se mi va di fare qualcosa non mi faccio più limitare dalla compagnia. Mi sento sempre più indipendente e sempre più me stessa.</p>
+
+      <div class="pullquote">
+        <p>Ho capito che il mio valore non dipende da quello che faccio, ma da chi sono.</p>
+      </div>
+
+      <p>Sul fronte pratico, la palestra ha contribuito a forgiare la mia organizzazione e produttività. Dopo ogni sessione mi sentivo molto più concentrata per lo studio. La necessità di seguire un piano alimentare mi ha portata a cucinare da sola per la prima volta, ormai due anni fa,  scoprendo una passione e prendendo un'abitudine importante che mi ha reso ancora più autonoma. Tra esperimenti riusciti e qualche piatto quasi immangiabile, mi diverto, mi sento spensierata. Quella leggerezza è uno dei regali più belli di questo percorso.</p>
+
+      <p>La palestra mi ha insegnato anche a osservare le parti sbagliate della mia mentalità e a lavorarci. Ho imparato che a volte bisogna rallentare, o addirittura fermarsi del tutto. Dare tempo al corpo e alla mente di riprendersi non è una perdita di tempo nè tantomeno pigrizia, ma intelligenza e cura di se. Andare di fretta può farti perdere ancora più tempo, o peggio, farti del male.</p>
+
+
+      <p>Ed è esattamente quello che ho fatto: ho rallentato. Ho ridotto l'intensità degli allenamenti, ho smesso gradualmente di prendere gli integratori e ho adattato il piano alimentare alle mie esigenze reali. Per ora sono in una fase di stallo, ma va bene così. In futuro, forse, riprenderò da dove mi ero fermata. Per adesso mi alleno perché mi piace e per restare in movimento, cercando di conservare uno stile di vita sano.</p>
+
+      <p>Quanto all'immagine che vedo allo specchio: non so se la mia pancia fosse davvero come la percepivo, né se sia mai cambiata davvero. So solo che ora non mi sembra più qualcosa di cui vergognarsi o da nascondere. La dismorfia corporea è molto comune, l'importante è esserne consapevoli. E migliorarsi in modo sano, partendo dall'accettazione di sé, non può che fare bene.<br>
+    Ma la consapevolezza più grande che ho raggiunto è questa:</p>
+
+      <div class="pullquote">
+        <p>Sono innanzitutto un essere umano, e poi tutto il resto.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(r => observer.observe(r));
+  </script>
+</body>
+</html>

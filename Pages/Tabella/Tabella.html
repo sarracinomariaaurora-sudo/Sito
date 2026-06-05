@@ -1,0 +1,167 @@
+<html>
+    <head>
+      <meta charset="UTF-8">
+     <title>La mia tabella</title>
+     <style>
+     html,body{
+      text-align:center;
+      height:100%;
+      margin:0;
+      background-image:url("../../Images/Backgrounds/Tabella-Background.jpg");
+      background-position: center;  
+      background-repeat: no-repeat; 
+      background-size: cover;       
+    }
+    body{
+      font-family: "Times New Roman", Times, serif;
+      padding-top: 80px;
+    }
+    table {
+      width: 80%;
+      margin: 10px auto 60px auto;
+      table-layout: fixed;
+      border-collapse:collapse;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+      table td, table th{
+      width:20%;
+      text-align:center;
+      padding:10px; 
+    }
+
+    table img {
+      width:80px;
+    }
+     
+    .bianco{
+      background-color:white;
+    }
+    .prestazioni {
+      background-color: #e0e0e0; /* grigio chiaro */
+    }
+    .capacita{
+      background-color: #bfbfbf;/*grigio medio*/
+    }
+    .consumo{
+        background-color:#adadad;/*grigio scuro*/
+    }
+    
+    h1{ 
+     margin-top: 50px;
+     font-size: 3rem;
+     font-weight: 700;
+     color: white;
+     text-shadow: 2px 2px 4px rgba(173, 173, 173, 0.8);
+     background-color:red;
+     padding:10px 20px;
+     display: inline-block;
+     border-radius: 10px;
+    }
+  
+
+
+/* NAVBAR */
+
+.contenitore {
+
+    display: inline-flex;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background-color: rgba(255,255,255,0.85);
+
+    padding: 12px 18px;
+
+    margin-top: 10px;
+
+    border-radius: 14px;
+
+    backdrop-filter: blur(6px);
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    z-index: 9999;
+    color: red;
+}
+
+.elemento {
+
+    text-align: center;
+}
+
+.elemento a {
+
+    text-decoration: none;
+
+    color:#333333;
+
+    transition: 0.3s;
+}
+
+.elemento a:hover {
+
+    color:#FF6B6B;
+}
+
+
+    </style>
+    </head>
+    <body>
+     <div class= contenitore>
+<div class= elemento>
+<a href=../../index.html>| Home |</a> <a href=../Sistema-Solare/Ipianetisolari.html> | Sistema Solare | </a> <a href=../Cantanti/Cantanti.html>| Cantanti |</a><strong>| Tabella | </strong> <a href=../Picasso/PabloPicasso.html>| Picasso | </a> <a href=../Curriculum/Curriculum_Sites/Curriculum.html>| Curriculum |</a> <a href=../Gentileschi/Gentileschi_Sites/Artemisia.html>| Gentileschi |</a> <a href=../Calcolatrice/Calcolatrice.html> | Calcolatrice | </a> <a href=../Bottone/Bottone_Sites/Bottone.html>  | Bottone |</a> <a href=../Pullover/Pullover.html>
+|Pullover |</a> <a href=../Artisti-in-Progress/Artisti-in-Progress_Sites/Artisti-in-Progress.html> |Artisti in Progress| </a>
+<a href="../Financial-Times/Financial-Times.html"> |Financial Times| </a>
+<a href="../Palestra/Palestra.html">| Palestra | </a>
+</div>
+</div> <br>
+    <h1> La mia tabella </h1>
+    <table border=1>
+    <thead>
+        <tr>
+          <th  colspan="2" class="bianco">Modello</th>
+           <th colspan="3" class="prestazioni">Prestazioni</th>
+           <th rowspan="2" class="bianco">Prezzo</th>
+        </tr>
+    <tr> 
+      <th class=bianco> Immagine </th>
+      <th class=bianco> Nome</th>
+      <th class="prestazioni">Velocità</th>
+      <th class="capacita">Capacità</th>
+      <th class="consumo">Consumo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td class=bianco> <img src=Tabella_Images/Audi-A4.png> </td>
+    <td class="bianco">Audi A4</td>
+    <td class="prestazioni"> 200 km/h </td>
+    <td class="capacita" >5 persone </td>
+    <td class="consumo">6 L/100 km</td>
+    <td class="bianco">&#8364;40.000</td>
+    </tr>
+    <tr>
+      <td class=bianco> <img src=Tabella_Images/BMW-X5.png> </td>
+      <td class=bianco >BMW X5</td>
+      <td colspan=2 class="prestazioni"> SUV </td>
+      <td class=consumo >8 L/100 km </td>
+      <td class=bianco>&#8364;65.000</td>
+    </tr>
+    <tr>
+    <td class=bianco> <img src=Tabella_Images/Ford-Mustang.png> </td>
+    <td class=bianco>Ford Mustang</td>
+    <td class=prestazioni>250 km/h</td>
+    <td class=capacita>2 persone</td>
+    <td class=consumo colspan="2">Vendita vietata in Europa</td>
+    </tr>
+  </tbody>
+  </table>
+  </body>
+</html>

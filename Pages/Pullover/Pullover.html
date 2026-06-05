@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <!-- Calcolo del prezzo scontato di un pullover e percentuale di sconto.-->
+    <meta charset="UTF-8">
+    <title>Calcolo dello sconto di un pullover </title>
+    <style>
+    body{
+      text-align: center;
+    }
+    html, body{
+      margin:0;
+      height:100%;
+      background-image:url("../../Images/Backgrounds/Pullov.bg.png");
+      background-position:center;
+  
+    }
+    h1{
+   margin-top: 70px;
+  margin-bottom:50px;
+  color:Black;
+}
+.container{
+  display:inline-flex;
+  background-color: rgba(255,255,255,0.8);
+  padding: 10px;
+  margin: 10px  10px;
+}
+ 
+  
+  /* NAVBAR */
+
+.contenitore {
+
+    display: inline-flex;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background-color: rgba(255,255,255,0.85);
+
+    padding: 12px 18px;
+
+    margin-top: 10px;
+
+    border-radius: 14px;
+
+    backdrop-filter: blur(6px);
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    z-index: 9999;
+    color: #C8A27C;
+}
+
+.elemento {
+
+    text-align: center;
+}
+
+.elemento a {
+
+    text-decoration: none;
+    color:#333333;
+    transition: 0.3s;
+}
+
+.elemento a:hover {
+
+   color:#D2B190;
+}
+
+
+
+</style>
+    <script>
+    function sconto_prezzo(){
+      var p=Number(document.getElementById("prezzo").value);
+      var s=Number(document.getElementById("sconto").value);
+      var ps;
+      if(p<0 && s>0){
+        alert("Il prezzo deve essere positivo");
+      }else if(s<0 && p>0){
+        alert("Lo sconto deve essere positivo");
+      }else if(p<0 && s<0){
+        alert("Devi reinserire tutto!");
+      }else{
+         ps= p-(p*s/100);
+      document.getElementById("prezzo_scontato").value = ps;
+      }
+    }
+    </script>
+  </head>
+  <body>
+  <div class= contenitore>
+<div class= elemento>
+<a href=../../index.html>| Home |</a> <a href=../Sistema-Solare/Ipianetisolari.html> | Sistema Solare | </a> <a href=../Cantanti/Cantanti.html>| Cantanti |</a><a href=../Tabella/Tabella.html> | Tabella | </a> <a href=../Picasso/PabloPicasso.html>| Picasso | </a> <a href=../Curriculum/Curriculum_Sites/Curriculum.html>| Curriculum |</a> <a href=../Gentileschi/Gentileschi_Sites/Artemisia.html>| Gentileschi |</a> <a href=../Calcolatrice/Calcolatrice.html>| Calcolatrice | </a> <a href=../Bottone/Bottone_Sites/Bottone.html>|Bottone|</a> <strong>|Pullover|</strong> <a href=../Artisti-in-Progress/Artisti-in-Progress_Sites/Artisti-in-Progress.html> |Artisti in Progress| </a> <a href=../Financial-Times/Financial-Times.html> |Financial Times| </a>
+<a href="../Palestra/Palestra.html">| Palestra | </a>
+</div>
+</div> <br>
+  <h1> Calcolo dello sconto </h1>
+  <div class=container>
+  <form>
+  <span>
+  Prezzo <input type=number id="prezzo">
+  Sconto <input type=number id="sconto">
+  Prezzo Scontato <input type=number id="prezzo_scontato" readonly> 
+   <input type="button" value="Calcola" onclick="sconto_prezzo()">
+  <input type=reset value="Cancella">
+  </span>
+  </form>
+  </div>
+  
+  
+  </body>
+</html>

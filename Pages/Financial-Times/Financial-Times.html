@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Play, learn, Recycle.it - FT Course Project</title>
+
+    <style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #0a192f;
+            --accent: #e06666;
+            --bg-light: #f8f9fa;
+            --text-dark: #333333;
+            --text-muted: #666666;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+
+            /* spazio per navbar fissa */
+            padding-top: 80px;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .contenitore {
+
+            display: inline-flex;
+
+            position: fixed;
+
+            top: 0;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            background-color: rgba(255, 255, 255, 0.85);
+
+            padding: 12px 18px;
+
+            margin-top: 10px;
+
+            border-radius: 14px;
+
+            backdrop-filter: blur(6px);
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+            z-index: 9999;
+        }
+
+        .elemento {
+            text-align: center;
+        }
+
+        .elemento a {
+            text-decoration: none;
+            color: #333333;
+            transition: 0.3s;
+        }
+
+        .elemento a:hover {
+            color: #D2B190;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+
+            background-image:
+                linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)),
+                url('Financial-Times_Images/sfondoft.jpg');
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            color: var(--white);
+
+            padding: 5rem 2rem;
+
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #b0c4de;
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .intro-box {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 3rem;
+            border-left: 5px solid var(--primary);
+        }
+
+        /* =========================
+           TIMELINE
+        ========================= */
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 3px solid #dee2e6;
+        }
+
+        .workshop-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .workshop-card::before {
+            content: '';
+            position: absolute;
+            left: -2.65rem;
+            top: 2rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: var(--primary);
+            border: 4px solid var(--bg-light);
+        }
+
+        .workshop-meta {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        /* =========================
+           TESTI
+        ========================= */
+
+        h2 {
+            font-size: 1.6rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            list-style-position: inside;
+            margin-left: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* =========================
+           QUOTES
+        ========================= */
+
+        .quote-box {
+            background: #fff8f8;
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .quote-author {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 0.9rem;
+            color: var(--secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* =========================
+           GRID
+        ========================= */
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contenitore {
+                width: 95%;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+        }
+
+        /* =========================
+           TABELLA
+        ========================= */
+
+        .table-container {
+            overflow-x: auto;
+            margin-top: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        th,
+        td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        th {
+            background-color: #f1f3f5;
+            color: var(--secondary);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 4rem;
+            border-top: 1px solid #dee2e6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <div class="contenitore">
+
+        <div class="elemento">
+
+            <a href="../../index.html">| Home |</a>
+
+            <a href="../Sistema-Solare/Ipianetisolari.html">
+                | Sistema Solare |
+            </a>
+
+            <a href="../Cantanti/Cantanti.html">
+                | Cantanti |
+            </a>
+
+            <a href="../Tabella/Tabella.html">
+                | Tabella |
+            </a>
+
+            <a href="../Picasso/PabloPicasso.html">
+                | Picasso |
+            </a>
+
+            <a href="../Curriculum/Curriculum_Sites/Curriculum.html">
+                | Curriculum |
+            </a>
+
+            <a href="../Gentileschi/Gentileschi_Sites/Artemisia.html">
+                | Gentileschi |
+            </a>
+
+            <a href="../Calcolatrice/Calcolatrice.html">
+                | Calcolatrice |
+            </a>
+
+            <a href="../Bottone/Bottone_Sites/Bottone.html">
+                |Bottone|
+            </a>
+
+            |<a href="../Pullover/Pullover.html">  | Pullover | </a>
+
+            <a href="../Artisti-in-Progress/Artisti-in-Progress_Sites/Artisti-in-Progress.html">
+                | Artisti in Progress |
+            </a>
+            <strong> |Financial Times| </strong>
+            <a href="../Palestra/Palestra.html">| Palestra |</a>
+        </div>
+
+    </div>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>Play, Learn, Recycle.it</h1>
+
+        <p>
+            Financial Times Course Project
+        </p>
+
+    </header>
+
+    <!-- MAIN -->
+
+    <main>
+
+        <section class="intro-box">
+
+            <h2>Il Progetto ed il Percorso</h2>
+
+            <p>
+                Durante questo corso strutturato in 5 videolezioni/workshop interattivi più un incontro finale,
+                abbiamo analizzato i problemi legati alla frammentazione delle regole di riciclaggio locali.
+                Abbiamo ideato e strutturato il business model di <strong>Recycle.it</strong>: un'applicazione
+                pensata per centralizzare le informazioni, rendere l'ecologia divertente attraverso minigiochi
+                e guidare i giovani adulti e gli studenti fuori sede a differenziare correttamente fin dal primo giorno.
+            </p>
+
+        </section>
+
+        <section class="timeline">
+
+            <!-- WORKSHOP 1 -->
+
+            <article class="workshop-card">
+
+                <div class="workshop-meta">
+                    Workshop 1 · 26 Febbraio 2026
+                </div>
+
+                <h2>
+                    FT Insights: Formazione dei Team e Brainstorming
+                </h2>
+
+                <p>
+                    Nel primo incontro abbiamo appreso le metodologie di lavoro del Financial Times
+                    per analizzare il mercato e stimolare l'innovazione.
+                </p>
+
+                <h3>Vision Board & Obiettivi di Squadra (2029-2030)</h3>
+
+                <ul>
+                    <li>
+                        <strong>Istruzione & Università:</strong>
+                        Puntare a ottimi voti e mantenere vivo l'interesse nelle passioni attuali.
+                    </li>
+
+                    <li>
+                        <strong>Esperienze di Vita:</strong>
+                        Viaggiare per il mondo, aprirsi a nuove avventure e stringere nuove amicizie.
+                    </li>
+
+                    <li>
+                        <strong>Disciplina e Lavoro:</strong>
+                        Coltivare la dedizione.
+                    </li>
+                </ul>
+
+            </article>
+
+            <!-- WORKSHOP 2 -->
+
+            <article class="workshop-card">
+
+                <div class="workshop-meta">
+                    Workshop 2 · 5 Marzo 2026
+                </div>
+
+                <h2>
+                    Target Audience, Marketing & Pitching
+                </h2>
+
+                <p>
+                    Abbiamo definito con precisione a chi si rivolge l'applicazione.
+                </p>
+
+                <div class="highlight-grid">
+
+                    <div>
+
+                        <h3>Il Target di Riferimento</h3>
+
+                        <ul>
+
+                            <li>
+                                Studenti universitari e fuori sede.
+                            </li>
+
+                            <li>
+                                Adolescenti curiosi.
+                            </li>
+
+                            <li>
+                                Insegnanti scolastici.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <div>
+
+                        <h3>Strategia di Marketing</h3>
+
+                        <ul>
+
+                            <li>
+                                Campagne video brevi.
+                            </li>
+
+                            <li>
+                                Partnership green.
+                            </li>
+
+                            <li>
+                                Sistema referral.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+            <!-- WORKSHOP 3 -->
+           <!-- SEZIONE WORKSHOP 3 -->
+<article class="workshop-card">
+    <div class="workshop-meta">Workshop 3 · 20 Aprile 2026</div>
+    <h2>Return on Investment & Business Plan</h2>
+    <p>In questo incontro abbiamo affrontato l'analisi finanziaria del progetto, definendo i costi di startup, i flussi di ricavo e i piani di monetizzazione per garantire la sostenibilità di <strong>Recycle.it</strong> nel tempo.</p>
+    
+    <h3>Analisi di Bilancio (Costi e Ricavi)</h3>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Tipologia di Spesa</th>
+                    <th>Costo</th>
+                    <th>Fonti di Ricavo</th>
+                    <th>Entrate Stimate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Developing</strong> (Freelance developer)</td>
+                    <td>€8.000 (Una tantum)</td>
+                    <td><strong>Ads</strong> (1.000 utenti)</td>
+                    <td>€2.190 / anno</td>
+                </tr>
+                <tr>
+                    <td><strong>Marketing</strong></td>
+                    <td>€1.000 (Una tantum)</td>
+                    <td><strong>Ads</strong> (10.000 utenti)</td>
+                    <td>€18.250 / anno</td>
+                </tr>
+                <tr>
+                    <td><strong>Designer</strong></td>
+                    <td>€1.000 (Una tantum)</td>
+                    <td><strong>Donation plans</strong> (Charity base - ~50 utenti)</td>
+                    <td>~€60 / anno per utente</td>
+                </tr>
+                <tr>
+                    <td><strong>Maintenance</strong></td>
+                    <td>€120 / anno</td>
+                    <td><strong>Donation plans</strong> (Charity pro - ~500 utenti)</td>
+                    <td>~€600 / anno per utente</td>
+                </tr>
+                <tr>
+                    <td><strong>Sponsorships</strong> (Treedom)</td>
+                    <td>-</td>
+                    <td><strong>Partnership Green</strong></td>
+                    <td>€1.500 / anno</td>
+                </tr>
+                <tr style="background-color: #f1f3f5; font-weight: bold;">
+                    <td>Totale Investimento Iniziale</td>
+                    <td>€10.000 + €120/anno</td>
+                    <td>Totale Ricavi (A regime base)</td>
+                    <td>€3.700 / anno</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Traguardi del Business Plan</h3>
+    <ul>
+        <li><strong>Break-Even Point (BEP):</strong> Previsto durante il secondo anno di attività, con il passaggio da 1.000 a 10.000 utenti e un ROI del 180,9%.</li>
+        <li><strong>Sostenibilità Fiscale:</strong> Calcolata un'aliquota di tassazione stimata del 30% sui ricavi annuali generati.</li>
+    </ul>
+</article>
+<!-- SEZIONE WORKSHOP 4 -->
+<article class="workshop-card">
+    <div class="workshop-meta">Workshop 4 · 27 Aprile 2026</div>
+    <h2>Presentation Overviews & Preparing Interviews</h2>
+    <p>Questo modulo è stato fondamentale per la preparazione del nostro Pitch finale. Abbiamo appreso le tecniche di comunicazione aziendale del Financial Times per esporre i dati in modo chiaro, superare l'ansia da prestazione e strutturare il nucleo funzionale dell'applicazione.</p>
+    
+    <h3>L'Architettura di Recycle.it: Le 6 Sezioni Principali</h3>
+    <p>Abbiamo definito la struttura tecnica dell'applicazione, progettando un'esperienza utente divisa in sei pilastri fondamentali per risolvere la frammentazione delle informazioni:</p>
+    
+    <div class="highlight-grid">
+        <div>
+            <ul>
+                <li><strong>Homepage:</strong> Il punto di ingresso principale con una panoramica rapida delle attività e notifiche di giornata.</li>
+                <li><strong>Recycling Calendar:</strong> Un calendario personalizzato con i giorni di raccolta differenziata del proprio comune.</li>
+                <li><strong>Sorting Guide:</strong> Informazioni chiare e immediate su come differenziare i singoli oggetti nei rispettivi cassonetti.</li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li><strong>Depot Map:</strong> Una mappa interattiva geolocalizzata per trovare i centri di raccolta e i cassonetti più vicini.</li>
+                <li><strong>Forum:</strong> Uno spazio di aggregazione comunitario per scambiare consigli, porre domande e fare rete.</li>
+                <li><strong>Learning Minigames:</strong> Quiz e mini-giochi educativi per rendere l'apprendimento divertente e stimolante.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="quote-box" style="margin-top: 1.5rem;">
+        <strong>Focus del Workshop:</strong> Mettersi in gioco e saper accettare i rifiuti o le critiche costruttive è il primo vero atto di coraggio quando si lancia una startup. Abbiamo strutturato il discorso per dimostrare come l'app riesca a centralizzare i dati e motivare l'utente fin dal primo giorno.
+    </div>
+</article>
+<!-- SEZIONE WORKSHOP 5 -->
+<article class="workshop-card">
+    <div class="workshop-meta">Workshop 5 · 6 Maggio 2026</div>
+    <h2>Interviewing FT Employees</h2>
+    <p>In questo quinto appuntamento abbiamo avuto l'opportunità di intervistare direttamente i professionisti del Financial Times. Questo momento di confronto ci ha permesso di validare la nostra idea e raccogliere consigli fondamentali sulla crescita aziendale, sull'importanza della comunicazione e sulla gestione dei fallimenti.</p>
+    
+    <h3>Le Citazioni Chiave dei Professionisti FT</h3>
+    <p>Abbiamo raccolto e fatto nostre le parole dei tre intervistati, inserendole come pilastri motivazionali all'interno della nostra presentazione:</p>
+
+    <div class="quote-box">
+        "Curiosity is probably 95% of the job. Learn how to fail fast. There should always be more problems to solve and more room to grow."
+        <span class="quote-author">— Kritasha Gupta</span>
+    </div>
+
+    <div class="quote-box">
+        "Don’t worry so much about making the right decision — make a decision that helps you grow. Technical skills can be taught; curiosity and communication matter more. It’s important to test the waters before committing fully to an idea."
+        <span class="quote-author">— Krystle Cook</span>
+    </div>
+
+    <div class="quote-box">
+        "I did what I was interested in, and that brought me here. You need to understand the audience before you write. Putting yourself out there and facing rejection is very courageous."
+        <span class="quote-author">— Sofiya Ninkovic</span>
+    </div>
+
+    <h3 style="margin-top: 1.5rem;">Cosa abbiamo imparato</h3>
+    <ul>
+        <li><strong>Mentalità flessibile:</strong> Bisogna imparare a sbagliare in fretta per correggere subito il tiro del proprio progetto.</li>
+        <li><strong>Soft Skills al centro:</strong> Le competenze tecniche si acquisiscono, ma sono la curiosità e la capacità di comunicare a fare la differenza.</li>
+        <li><strong>Analisi del pubblico:</strong> Prima di sviluppare qualsiasi idea o scrivere un testo, è vitale mappare e capire a fondo le necessità del proprio target.</li>
+    </ul>
+</article>
+<!-- SEZIONE INCONTRO 6 / PRESENTAZIONE FINALE -->
+<article class="workshop-card" style="border-left: 5px solid #28a745;">
+    <div class="workshop-meta" style="color: #28a745;">Incontro Finale · 13 maggio </div>
+    <h2>Presentazione Finale del Progetto</h2>
+    <p>L'ultimo incontro è stato il culmine del nostro percorso PCTO. Ogni gruppo ha esposto il proprio lavoro. Noi abbiamo presentato ufficialmente la nostra idea di startup <strong>Recycle.it</strong>, illustrando il problema, le funzionalità dell'app, il target e i piani finanziari di crescita a 5 anni (Futureproofing).</p>
+
+
+    <div class="quote-box" style="margin-top: 1.5rem; background-color: #f4fbf6; border-left-color: #28a745;">
+        <strong>Traguardo Raggiunto:</strong> anche se non sono completamente soddisfatta della mia prestazione durante la presentazione del progetto stesso, mi è piaciuto il mio approccio iniziale nella descrizione degli obiettivi per il futuro. Nel complesso, è stata una esperienza formativa che mi ha permesso di allargare i miei orizzonti e applicare il mio inglese anche ad ambiti che non avevo mai considerato.
+    </div>
+</article>
+
+    </main>
+
+
+</body></html>

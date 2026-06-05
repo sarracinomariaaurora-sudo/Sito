@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<style>
+html, body {
+   margin: 0;
+  background-color: #FFD9A3;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+}
+body{
+      padding-top: 80px;
+}
+h2{
+  margin: 40px 0;
+}
+
+/* NAVBAR */
+
+.contenitore {
+
+    display: inline-flex;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background-color: rgba(255,255,255,0.85);
+
+    padding: 12px 18px;
+
+    margin-top: 10px;
+
+    border-radius: 14px;
+
+    backdrop-filter: blur(6px);
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    z-index: 9999;
+    color: #FFA500;
+}
+
+.elemento {
+
+    text-align: center;
+}
+
+.elemento a {
+
+    text-decoration: none;
+
+    color: black;
+
+    transition: 0.3s;
+}
+
+.elemento a:hover {
+
+    color: #FFA500;
+}
+
+
+
+
+
+
+
+</style>
+<script>
+function Lamp(state) {
+    const image = document.getElementById('myImage');
+    if(state == 'on') {
+        image.src = '../Bottone_Images/Lampadina_accesaa.png';
+    } else {
+        image.src = '../Bottone_Images/Lampadina_spenta.png';
+    }
+}
+</script>
+</head>
+<body>
+<div class= contenitore>
+<div class= elemento>
+<a href=../../../index.html>| Home |</a> <a href=../../Sistema-Solare/Ipianetisolari.html> | Sistema Solare | </a> <a href=../../Cantanti/Cantanti.html> | Cantanti | </a>  <a href=../../Tabella/Tabella.html> | Tabella | </a> <a href=../../Picasso/PabloPicasso.html>| Picasso |</a> <a href=../../Curriculum/Curriculum_Sites/Curriculum.html>| Curriculum |</a> <a href=../../Gentileschi/Gentileschi_Sites/Artemisia.html>| Gentileschi |</a> <a href=../../Calcolatrice/Calcolatrice.html>| Calcolatrice | </a> <strong> | Bottone |</strong> <a href=../../Pullover/Pullover.html> |Pullover |</a> <a href=../../Artisti-in-Progress/Artisti-in-Progress_Sites/Artisti-in-Progress.html> |Artisti in Progress| </a> <a href=../../Financial-Times/Financial-Times.html> |Financial Times| </a>
+<a href="../../Palestra/Palestra.html">| Palestra | </a>
+</div>
+</div> <br>
+
+<h2>Cosa può fare JavaScript?</h2>
+
+<p>JavaScript può cambiare i valori degli attributi HTML.</p>
+
+<p>In questo caso JavaScript cambia il valore dell'attributo src di una immagine.</p>
+<button onclick="Lamp('on')">Accendi</button>
+<img id="myImage" src="../Bottone_Images/Lampadina_spenta.png" style="width:100px">
+<button onclick="Lamp('off')">Spegni</button>
+
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Il sistema solare </title>
+<style>
+html,body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+  background-image: url("../../Images/Backgrounds/Pianeti.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+body{
+  padding-top: 80px;
+}
+table { 
+ width: max-content;
+ margin: 40px 0;
+ border-collapse: collapse;
+ background-color: #FFF3E0;
+ border-radius: 12px;
+ overflow: hidden;
+ text-align: center;
+}
+table img {
+  display:block;
+  margin: 0 auto;
+}
+
+table th {
+  background-color: #F2B705;
+  padding: 15px;
+  font-size: 1.2rem;
+}
+
+table td {
+  padding: 12px;
+  border-bottom: 1px solid #E0C18F;
+}
+
+table tr:hover {
+  background-color: #FFE8C7;
+}
+
+.table-container {
+  overflow-x: auto; 
+  width: 100%; 
+}
+
+h1{
+  margin: 50px 0 20px 0;
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(173, 173, 173, 0.8);
+  background-color: #F2B705;
+  display: inline-block;/*di default, h1 è display:block, occupa tutto lo spazio. Se è display:inline-block,occupa solo lo spazio necessario per il testo, e la casella non ha spazi superflui*/
+  padding: 10px 20px;
+  border-radius: 10px;
+ }
+
+
+
+
+
+
+/* NAVBAR */
+
+.contenitore {
+
+    display: inline-flex;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background-color: rgba(255,255,255,0.85);
+
+    padding: 12px 18px;
+
+    margin-top: 10px;
+
+    border-radius: 14px;
+
+    backdrop-filter: blur(6px);
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    z-index: 9999;
+    color:#B8860B;
+}
+
+.elemento {
+
+    text-align: center;
+}
+
+.elemento a {
+
+    text-decoration: none;
+
+    color: black;
+
+    transition: 0.3s;
+}
+
+.elemento a:hover {
+
+    color:#B8860B;
+}
+
+
+</style>
+
+</head>
+<body>
+
+ <div class= contenitore>
+<div class= elemento>
+<a href=../../index.html>| Home |</a> <strong>| Sistema Solare |</strong> <a href=../Cantanti/Cantanti.html> | Cantanti | </a> <a href=../Tabella/Tabella.html> | Tabella | </a> <a href=../Picasso/PabloPicasso.html>| Picasso |</a> <a href=../Curriculum/Curriculum_Sites/Curriculum.html>| Curriculum |</a> <a href=../Gentileschi/Gentileschi_Sites/Artemisia.html>| Gentileschi |</a> <a href=../Calcolatrice/Calcolatrice.html> | Calcolatrice | </a> <a href=../Bottone/Bottone_Sites/Bottone.html>  | Bottone |</a> <a href=../Pullover/Pullover.html>
+|Pullover |</a> <a href=../Artisti-in-Progress/Artisti-in-Progress_Sites/Artisti-in-Progress.html> |Artisti in Progress| </a> <a href=../Financial-Times/Financial-Times.html> |Financial Times| </a>
+<a href="../Palestra/Palestra.html">| Palestra | </a>
+</div>
+</div> <br>
+<h1> Il sistema solare </h1>
+<div class="table-container"> 
+<table border=2>
+<thead>
+<tr>
+<th> Sole </th>
+<th> Mercurio </th>
+<th>Venere</th>
+<th>Terra</th>
+<th> Luna </th>
+<th>Marte</th>
+<th>Giove</th>
+<th>Saturno</th>
+<th>Urano</th>
+<th>Nettuno</th>
+<th>Plutone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> <img src="Pianeti_Images/Sole.png" width=300px alt=Sole> </td>
+<td>  <img src="Pianeti_Images/Mercurio.png" width=80px alt=Mercurio> </td>
+<td> <img src="Pianeti_Images/Venere.png" width=140px alt=Venere> </td>
+<td> <img src=Pianeti_Images/Terra.png width=150px alt=Terra> </td>
+<td> <img src=Pianeti_Images/Luna.png width=50px alt=Luna>
+<td> <img src="Pianeti_Images/Marte.png" width=100px alt=Marte> </td>
+<td> <img src="Pianeti_Images/Giove.png" width=250px alt=Giove> </td>
+<td> <img src="Pianeti_Images/Saturno.png" width=240px alt=Saturno> </td>
+<td> <img src="Pianeti_Images/Urano.png" width=150px alt=Urano> </td>
+<td> <img src="Pianeti_Images/Nettuno.png" width=130px alt=Nettuno> </td>
+<td> <img src="Pianeti_Images/Plutone.png" width=55px alt=Plutone> </td>
+</tr>
+<tr>
+<td>1.392.000 km</td>
+<td>4.880 km </td>
+<td>12.104 km (simile alla Terra)</td>
+<td>12.742 km</td>
+<td> Satellite terrestre: 1.737,4 km</td>
+<td>6.779 km (circa metà della Terra)</td>
+<td>142.984 km (il più grande pianeta)</td>
+<td>120.536 km (il secondo più grande)</td>
+<td>51.118 km</td>
+<td>49.532 km</td>
+<td>1.188,3 km</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<script>
+const immagini = document.querySelectorAll("table img");
+
+immagini.forEach(                        // apro forEach
+  function(immagine_pianeta) {           // apro function del forEach
+    immagine_pianeta.addEventListener(   // apro addEventListener
+      "mouseover",                       // primo argomento
+      function() {                       // apro function dell'evento
+        alert(immagine_pianeta.alt);     // il codice da eseguire
+      }                                  // chiudo function dell'evento
+    );                                   // chiudo addEventListener
+  }                                      // chiudo function del forEach
+);                                       // chiudo forEach
+</script>
+</body>
+</html>

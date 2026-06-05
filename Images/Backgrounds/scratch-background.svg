@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <!-- Gradient di sfondo -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD4A3;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFF5E6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFE8CC;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1920" height="1080" fill="url(#bgGradient)"/>
+  
+  <!-- Gatto Scratch 1 (alto sinistra) -->
+  <g transform="translate(100, 100) rotate(-15) scale(1.2)" opacity="0.15">
+    <ellipse cx="50" cy="55" rx="35" ry="30" fill="#FF8C1A" stroke="#000" stroke-width="2"/>
+    <ellipse cx="50" cy="70" rx="25" ry="20" fill="#FFF"/>
+    <circle cx="38" cy="45" r="12" fill="#FFF"/>
+    <circle cx="62" cy="45" r="12" fill="#FFF"/>
+    <circle cx="40" cy="45" r="6" fill="#000"/>
+    <circle cx="64" cy="45" r="6" fill="#000"/>
+    <ellipse cx="50" cy="55" rx="4" ry="3" fill="#000"/>
+    <path d="M 50 55 Q 45 60 40 58" stroke="#000" stroke-width="1.5" fill="none"/>
+    <path d="M 50 55 Q 55 60 60 58" stroke="#000" stroke-width="1.5" fill="none"/>
+    <line x1="20" y1="45" x2="35" y2="47" stroke="#000" stroke-width="1.5"/>
+    <line x1="20" y1="50" x2="35" y2="50" stroke="#000" stroke-width="1.5"/>
+    <line x1="80" y1="45" x2="65" y2="47" stroke="#000" stroke-width="1.5"/>
+    <line x1="80" y1="50" x2="65" y2="50" stroke="#000" stroke-width="1.5"/>
+    <path d="M 30 20 L 35 35 L 40 25 Z" fill="#FF8C1A" stroke="#000" stroke-width="2"/>
+    <path d="M 70 20 L 65 35 L 60 25 Z" fill="#FF8C1A" stroke="#000" stroke-width="2"/>
+  </g>
+  
+  <!-- Gatto Scratch 2 (basso destra) -->
+  <g transform="translate(1750, 880) rotate(10) scale(1.2)" opacity="0.15">
+    <ellipse cx="50" cy="55" rx="35" ry="30" fill="#FF8C1A" stroke="#000" stroke-width="2"/>
+    <ellipse cx="50" cy="70" rx="25" ry="20" fill="#FFF"/>
+    <circle cx="38" cy="45" r="12" fill="#FFF"/>
+    <circle cx="62" cy="45" r="12" fill="#FFF"/>
+    <circle cx="40" cy="45" r="6" fill="#000"/>
+    <circle cx="64" cy="45" r="6" fill="#000"/>
+    <ellipse cx="50" cy="55" rx="4" ry="3" fill="#000"/>
+    <path d="M 50 55 Q 45 60 40 58" stroke="#000" stroke-width="1.5" fill="none"/>
+    <path d="M 50 55 Q 55 60 60 58" stroke="#000" stroke-width="1.5" fill="none"/>
+    <line x1="20" y1="45" x2="35" y2="47" stroke="#000" stroke-width="1.5"/>
+    <line x1="20" y1="50" x2="35" y2="50" stroke="#000" stroke-width="1.5"/>
+    <line x1="80" y1="45" x2="65" y2="47" stroke="#000" stroke-width="1.5"/>
+    <line x1="80" y1="50" x2="65" y2="50" stroke="#000" stroke-width="1.5"/>
+    <path d="M 30 20 L 35 35 L 40 25 Z" fill="#FF8C1A" stroke="#000" stroke-width="2"/>
+    <path d="M 70 20 L 65 35 L 60 25 Z" fill="#FF8C1A" stroke="#000" stroke-width="2"/>
+  </g>
+  
+  <!-- Gatto Scratch 3 (centro sinistra) -->
+  <g transform="translate(60, 650) rotate(5)" opacity="0.15">
+    <ellipse cx="50" cy="55" rx="35" ry="30" fill="#FF8C1A" stroke="#000" stroke-width="2"/>
+    <ellipse cx="50" cy="70" rx="25" ry="20" fill="#FFF"/>
+    <circle cx="38" cy="45" r="12" fill="#FFF"/>
+    <circle cx="62" cy="45" r="12" fill="#FFF"/>
+    <circle cx="40" cy="45" r="6" fill="#000"/>
+    <circle cx="64" cy="45" r="6" fill="#000"/>
+    <ellipse cx="50" cy="55" rx="4" ry="3" fill="#000"/>
+    <path d="M 30 20 L 35 35 L 40 25 Z" fill="#FF8C1A" stroke="#000" stroke-width="2"/>
+    <path d="M 70 20 L 65 35 L 60 25 Z" fill="#FF8C1A" stroke="#000" stroke-width="2"/>
+  </g>
+  
+  <!-- Blocchi di codice Scratch -->
+  <!-- Blocco blu (Motion) -->
+  <g opacity="0.12">
+    <rect x="1620" y="162" width="140" height="40" rx="8" fill="#4C97FF"/>
+    <text x="1635" y="187" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">move 10 steps</text>
+  </g>
+  
+  <!-- Blocco viola (Looks) -->
+  <g opacity="0.12">
+    <rect x="1650" y="486" width="120" height="40" rx="8" fill="#9966FF"/>
+    <text x="1665" y="511" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">say Hello!</text>
+  </g>
+  
+  <!-- Blocco rosa (Sound) -->
+  <g opacity="0.12">
+    <rect x="154" y="810" width="130" height="40" rx="8" fill="#CF63CF"/>
+    <text x="169" y="835" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">play sound</text>
+  </g>
+  
+  <!-- Blocco giallo (Events) -->
+  <g opacity="0.12">
+    <rect x="192" y="270" width="140" height="40" rx="8" fill="#FFBF00"/>
+    <text x="207" y="295" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">when clicked</text>
+  </g>
+  
+  <!-- Blocco arancione (Control) -->
+  <g opacity="0.12">
+    <rect x="1600" y="702" width="110" height="40" rx="8" fill="#FFAB19"/>
+    <text x="1615" y="727" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">repeat 10</text>
+  </g>
+  
+  <!-- Blocco verde (Operators) -->
+  <g opacity="0.12">
+    <rect x="1536" y="756" width="120" height="40" rx="8" fill="#59C059"/>
+    <text x="1551" y="781" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">x position</text>
+  </g>
+  
+  <!-- Blocco azzurro (Sensing) -->
+  <g opacity="0.12">
+    <rect x="288" y="972" width="110" height="40" rx="8" fill="#5CB1D6"/>
+    <text x="303" y="997" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">touching?</text>
+  </g>
+  
+  <!-- Sprite pixelati -->
+  <!-- Sprite 1 (alto destra) -->
+  <g transform="translate(1440, 324) scale(3.75)" opacity="0.15">
+    <rect x="4" y="2" width="8" height="12" fill="#7B68EE"/>
+    <rect x="6" y="5" width="2" height="2" fill="#FFF"/>
+    <rect x="8" y="5" width="2" height="2" fill="#FFF"/>
+    <rect x="7" y="5" width="1" height="1" fill="#000"/>
+    <rect x="9" y="5" width="1" height="1" fill="#000"/>
+  </g>
+  
+  <!-- Sprite 2 (basso sinistra) -->
+  <g transform="translate(384, 432) scale(3.75)" opacity="0.15">
+    <rect x="4" y="2" width="8" height="12" fill="#5CB1D6"/>
+    <rect x="6" y="5" width="2" height="2" fill="#FFF"/>
+    <rect x="8" y="5" width="2" height="2" fill="#FFF"/>
+    <rect x="7" y="5" width="1" height="1" fill="#000"/>
+    <rect x="9" y="5" width="1" height="1" fill="#000"/>
+  </g>
+  
+  <!-- Stelle decorative -->
+  <polygon points="288,216 297.6,237.6 320,240 304,256 307.2,278.4 288,266.4 268.8,278.4 272,256 256,240 278.4,237.6" fill="#FFD700" opacity="0.1"/>
+  <polygon points="1728,324 1737.6,345.6 1760,348 1744,364 1747.2,386.4 1728,374.4 1708.8,386.4 1712,364 1696,348 1718.4,345.6" fill="#FFD700" opacity="0.1"/>
+  <polygon points="154,540 163.6,561.6 186,564 170,580 173.2,602.4 154,590.4 134.8,602.4 138,580 122,564 144.4,561.6" fill="#FFD700" opacity="0.1"/>
+  
+  <!-- Puntini decorativi -->
+  <circle cx="500" cy="200" r="4" fill="#FFD700" opacity="0.08"/>
+  <circle cx="1400" cy="600" r="4" fill="#FFD700" opacity="0.08"/>
+  <circle cx="300" cy="900" r="4" fill="#FFD700" opacity="0.08"/>
+  <circle cx="1600" cy="450" r="4" fill="#FFD700" opacity="0.08"/>
+  <circle cx="800" cy="150" r="4" fill="#FFD700" opacity="0.08"/>
+</svg>

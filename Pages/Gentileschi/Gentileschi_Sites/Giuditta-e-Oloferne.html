@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Le due versioni di Giuditta e Oloferne</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+    html ,body{
+      font-family: "Times New Roman", Times, serif;
+      height: 100%;
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .back{
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #336699;
+      color: white;
+      border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 28px;
+     text-decoration: none;
+     cursor: pointer;
+     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+   .back:hover {
+     background-color:  #4A82B1;
+     transform: scale(1.1);
+}
+  
+    h1,
+    h2{
+     margin:50px auto;
+     font-size: 3rem;
+     font-weight: 700;
+     color: white;
+     text-shadow: 2px 2px 4px rgba(173, 173, 173, 0.8);
+     background-color: #336699;
+     display: inline-block;
+     padding: 10px 20px;
+    border-radius: 10px;
+    }
+    
+    body{
+      text-align:center;
+      color:white;
+      background-image: url("../../../Images/Backgrounds/Rome_Background.png");
+      background-size: cover;        
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;  
+    }
+    
+    /*prima parte*/
+  
+    .confronto {
+     display: flex;
+     gap: 20px;              
+     margin: 40px auto;
+     align-items: flex-start; 
+     justify-content: center; 
+    }
+    .firenze{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+      align-items:center;
+    }
+
+    .napoli{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+      align-items:center;
+    }
+   
+    .firenze img,
+    .napoli img{
+      width: auto;      
+      max-width: 400px;  
+      height: auto;      
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+    }
+    .firenze ul,
+    .napoli ul {
+       padding: 10px;
+       border-radius: 8px;
+       text-align: justify;
+       width: 100%; /* resta sotto immagine */
+       box-sizing: border-box;
+       list-style-position: inside; 
+    }
+    .firenze ul{
+      background-color:rgba(220, 180, 60, 0.8); 
+    }
+    .napoli ul{
+      background-color:rgba(30, 70, 130, 0.8);
+    }
+ 
+    
+    /*seconda parte*/
+    .dettagli{
+     display: flex;
+     flex-direction: column;
+     gap: 40px;
+     margin: 40px auto;
+     justify-content: center;
+     align-items: center;
+    }
+    .Coperta,
+    .Oloferne,
+    .Giuditta{
+     display: flex;
+     gap: 20px;
+     justify-content: center;
+     align-items: flex-start; 
+    }
+    .Coperta-Firenze,
+    .Coperta-Napoli,
+    .Oloferne-Firenze,
+    .Oloferne-Napoli,
+    .Giuditta-Firenze,
+    .Giuditta-Napoli{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      width: 300px
+    }
+    .Giuditta img,
+    .Oloferne img,
+    .Coperta img{
+      width: 100%;             
+      aspect-ratio: 1 / 1;    
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+    }
+    .Coperta-Napoli p,
+    .Oloferne-Napoli p,
+    .Giuditta-Napoli p{
+      background-color:rgba(30, 70, 130, 0.8);
+    }
+.Coperta-Firenze p,
+.Oloferne-Firenze p,
+.Giuditta-Firenze p{
+   background-color: rgba(220, 180, 60, 0.8); 
+}
+.Coperta-Napoli p,
+.Oloferne-Napoli p,
+.Giuditta-Napoli p,
+.Coperta-Firenze p,
+.Oloferne-Firenze p,
+.Giuditta-Firenze p{
+  padding: 10px;
+  border-radius: 8px;
+  text-align: justify;
+  width: 100%; 
+  box-sizing: border-box;
+    }
+
+
+    </style>
+  </head>
+  <body>
+  <h1> Le due versioni di Giuditta e Oloferne </h1>
+    <a href="Artemisia.html" class="back">
+  <i class="fa-solid fa-arrow-left"></i>
+</a>
+    <div class=confronto>
+      <div class=firenze>
+          <img src=../Gentileschi_Images/Giuditta_e_Oloferne_Images/Firenze/Giuditta-decapita-Oloferne-Firenze.jpg title="Versione di Firenze">
+            <ul> 
+            <li>Maggiore maturità tecnica</li>
+            <li>Colori più luminosi e tessuti più ricchi</li>
+            <li>Composizione più ampia e ordinata</li>
+            <li>Analisi psicologica più profonda </li>
+            <li>Giuditta appare fredda e determinata</li>
+            </ul>
+            </div>
+      <div class=napoli>
+          <img src=../Gentileschi_Images/Giuditta_e_Oloferne_Images/Napoli/Napoli.jpg title="Versione di Napoli">
+           <ul>
+           <li>Opera più precoce</li>
+           <li>Chiaroscuro più cupo e drammatico</li>
+           <li>Composizione più ravvicinata</li>
+           <li>Sguardo distaccato, assente</li>
+           <li>Violenza resa con congelamento emotivo</li>
+           </ul>
+           </div>
+           </div>
+           
+    <hr>
+    <h2> I dettagli </h2>
+    <div class="dettagli">
+    <div class=Giuditta>
+      <div class=Giuditta-Firenze>
+        <img src="../Gentileschi_Images/Giuditta_e_Oloferne_Images/Firenze/giuditta.png" title="Giuditta Firenze">
+        <p>Con l'aggiunta del sopracciglio inarcato, Giuditta assume un'aria molto più coinvolta e spietata, senza un minimo di esitazione o senso di colpa.</p>
+      </div>
+      <div class="Giuditta-Napoli">
+        <img src="../Gentileschi_Images/Giuditta_e_Oloferne_Images/Napoli/Giuditta2.png" title="Giuditta Napoli">
+        <p>Lo sguardo non lascia trasparire nessuna particolare analisi psicologica. Probabilmente, poichè ai tempi il trauma era fresco, Artemisia era dissociata emotivamente.</p>
+      </div>
+      </div>
+      <div class=Oloferne>
+      <div class=Oloferne-Firenze>
+      <img src=../Gentileschi_Images/Giuditta_e_Oloferne_Images/Firenze/Oloferne_Firenze.png title="Oloferne Firenze">
+      <p> Nella versione fiorentina, il sangue zampillante è ritratto in modo nettamente più crudo e realistico</p>
+      </div>
+      <div class=Oloferne-Napoli>
+      <img src=../Gentileschi_Images/Giuditta_e_Oloferne_Images/Napoli/Oloferne_napoli.jpg title="Oloferne Napoli">
+      <p> Il sangue ha un colore più spento ed è presente in minor quantità. Inoltre, anche la presa sulla barba risulta meno decisa.</p>
+      </div>
+      </div>
+      <div class=Coperta>
+      <div class=Coperta-Firenze>
+      <img src=../Gentileschi_Images/Giuditta_e_Oloferne_Images/Firenze/Coperta_Firenze.jpg title="Coperta Firenze">
+      <p> Il sangue di Oloferne impregna le lenzuola. Tale effetto è talmente realistico da sembrare una fotografia</p>
+      </div>
+      <div class=Coperta-Napoli>
+      <img src=../Gentileschi_Images/Giuditta_e_Oloferne_Images/Napoli/Coperta_Napoli.jpg title="Coperta Napoli">
+      <p> In questa versione, l'ambientazione è meno visibile, ma sembra non esserci alcuna traccia di sangue.</p>
+      </div>
+      </div>
+    </div>
+  
+  </body>
+</html>
